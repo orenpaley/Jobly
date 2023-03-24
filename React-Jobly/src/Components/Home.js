@@ -17,7 +17,7 @@ function Home() {
         </section>
       </div>
     );
-  } else if (current) {
+  } else {
     return (
       <>
         <div className="title">

@@ -3,13 +3,16 @@ import React from "react";
 import { Route, Switch } from "react-router";
 import PrivateRoute from "../Helpers/PrivateRoute";
 
+import { useHistory } from "react-router";
+
+import JoblyApi from "../Api/api";
 import Home from "../Components/Home";
 import Companies from "../Components/Companies";
 import Company from "../Components/Company";
 import Jobs from "../Components/Jobs";
 import Signup from "../Components/Signup";
 import Login from "../Components/Login";
-import Applications from "../Components/Applications";
+import Logout from "../Components/Logout";
 import Profile from "../Profile";
 
 function Routes({
@@ -17,7 +20,6 @@ function Routes({
   handleLoginSubmit,
   handleSignupChange,
   handleSignupSubmit,
-  handleLogout,
   username,
   password,
   setUser,
@@ -58,11 +60,9 @@ function Routes({
         <PrivateRoute exact path="/profile">
           <Profile current={current} setCurrent={setCurrent} />
         </PrivateRoute>
-        <PrivateRoute
-          exact
-          path="/logout"
-          onSubmit={handleLogout}
-        ></PrivateRoute>
+        <PrivateRoute exact path="/logout">
+          <Logout setUser={setUser} setCurrent={setCurrent} />
+        </PrivateRoute>
       </Switch>
     </div>
   );

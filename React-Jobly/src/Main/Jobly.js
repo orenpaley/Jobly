@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, useHistory } from "react-router-dom";
 import Routes from "../Routes/Routes";
 import JoblyApi from "../Api/api";
 import userContext from "../UserContext";
@@ -16,6 +16,7 @@ function Jobly() {
     localStorage.getItem("currUser") || { token: null }
   );
   const [current, setCurrent] = useState(null);
+  const history = useHistory();
 
   useEffect(() => {
     const getLoggedUser = async () => {
@@ -55,27 +56,17 @@ function Jobly() {
     }
   };
 
-  const handleLogout = (e) => {
-    e.preventDefault();
-    JoblyApi.token = null;
-    localStorage.removeItem("currUser");
-    setUser(null);
-    setCurrent(null);
-    return;
-  };
-
   return (
     <BrowserRouter>
       <userContext.Provider value={{ user, current }}>
         <div>
-          <NavBar handleLogout={handleLogout} setUser={setUser} />
+          <NavBar setUser={setUser} />
           <Routes
             // handleLoginSubmit={handleLoginSubmit}
             handleLoginChange={handleLoginChange}
             handleSignupChange={handleSignupChange}
             username={username}
             password={password}
-            handleLogout={handleLogout}
             setUser={setUser}
             current={current}
             setCurrent={setCurrent}

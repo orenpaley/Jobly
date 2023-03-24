@@ -8,19 +8,9 @@ import "./Applications.css";
 
 function Applications() {
   const { current } = React.useContext(userContext);
-  const [applied, setApplied] = useState([]);
   const [jobs, setJobs] = useState([]);
 
   const getJobs = async () => {
-    setJobs(
-      current.applications.map(async (a) => {
-        return await JoblyApi.getJob(a);
-      })
-    );
-    console.log("jobs?", jobs);
-  };
-
-  const getWithPromiseAll = async () => {
     console.time("promise all");
     let data = await Promise.all(
       current.applications.map(async (a) => {
@@ -32,7 +22,7 @@ function Applications() {
   };
 
   useEffect(() => {
-    getWithPromiseAll();
+    getJobs();
   }, []);
 
   return (

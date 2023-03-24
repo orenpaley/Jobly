@@ -111,6 +111,16 @@ class JoblyApi {
     console.log(`${username} applied to job {${jobId}}`, res);
     return res;
   }
+  /** User Un Apply to Job **/
+  static async unApplyJob(username, jobId) {
+    let res = await this.request(
+      `users/${username}/jobs/${jobId}`,
+      {},
+      "delete"
+    );
+    console.log(`${username} removed application {${jobId}}`, res);
+    return res;
+  }
 }
 
 // for now, put token ("testuser" / "password" on class)

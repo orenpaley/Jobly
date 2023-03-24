@@ -4,32 +4,40 @@ import { NavLink } from "react-router-dom";
 
 import { Nav, NavItem } from "reactstrap";
 
-import userContext from "../UserContext";
-
 // this component renders the nav and allows for active hovering
-function NavBar({ handleLogout }) {
-  const { user } = React.useContext(userContext);
-
+function NavBar() {
   function isLoggedIn() {
     return (
       <div>
         <Nav className="navbar" tabs color="info" justified>
-          <NavLink exact to="/" className="navbar-brand">
-            Home
-          </NavLink>
           <NavItem>
-            <NavLink to="/companies">Companies</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/jobs">Jobs</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/profile">Profile</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/" onClick={handleLogout}>
-              Logout
+            <NavLink
+              exact
+              activeClassName="is-active"
+              to="/"
+              active="true"
+              className="navlink"
+            >
+              Home
             </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink activeClassName="is-active" to="/companies">
+              Companies
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink activeClassName="is-active" to="/jobs">
+              Jobs
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink activeClassName="is-active" to="/profile">
+              Profile
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to="/logout">Logout</NavLink>
           </NavItem>
         </Nav>
       </div>
@@ -74,7 +82,7 @@ function NavBar({ handleLogout }) {
     );
   }
 
-  return user ? isLoggedIn() : notLoggedIn();
+  return localStorage.getItem("currUser") ? isLoggedIn() : notLoggedIn();
 }
 
 export default NavBar;

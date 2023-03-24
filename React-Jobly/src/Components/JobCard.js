@@ -20,6 +20,12 @@ function JobCard({ id, title, salary, equity, handle, current }) {
       history.go(0);
       return res;
     }
+    if (found) {
+      let res = await JoblyApi.unApplyJob(current.username, id);
+      history.go(0);
+      console.log("removed?");
+      return res;
+    }
   };
 
   if (found) {
@@ -41,7 +47,12 @@ function JobCard({ id, title, salary, equity, handle, current }) {
         <div style={{ color: "orange", margin: "12px" }}>{salary}</div>
         <div style={{ color: "blue", margin: "12px" }}>{equity}</div>
         <div style={{ color: "pink", margin: "12px" }}>{handle}</div>
-        <button disabled>Applied</button>
+        <button
+          onClick={handleClick}
+          style={{ padding: "11px", color: "red", margin: "0 0 0 30px " }}
+        >
+          unApply
+        </button>
       </Link>
     );
   } else {
@@ -64,7 +75,7 @@ function JobCard({ id, title, salary, equity, handle, current }) {
         <div style={{ color: "blue", margin: "12px" }}>{equity}</div>
         <div style={{ color: "pink", margin: "12px" }}>{handle}</div>
         <button
-          style={{ backrgroundColor: "blue", margin: "12px" }}
+          style={{ padding: "11px", color: "green", margin: "0 0 0 30px " }}
           onClick={handleClick}
         >
           Apply
