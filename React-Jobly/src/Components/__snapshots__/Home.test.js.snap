@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <h2
+      class="welcome-new"
+    >
+      Welcome To 
+      <span
+        class="jobly-span"
+      >
+        Jobly
+      </span>
+    </h2>
+    <section
+      class="subheader-container"
+    >
+      <h1
+        class="signup-new"
+      >
+        Sign up or Login to Get Started
+      </h1>
+    </section>
+  </div>
+</DocumentFragment>
+`;

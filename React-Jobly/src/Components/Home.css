@@ -1,0 +1,24 @@
+.jobly-span {
+  color: green;
+  font-weight: bold;
+}
+
+.title {
+  border-top: 3px black solid;
+  display: block;
+  margin: 0 0 0px 0;
+  padding: 50px 0;
+  font-size: 50px;
+  background-color: yellow;
+  
+}
+
+.subheader-container {
+  border-top: 4px black solid;
+  padding-top: 81px;
+  display: block;
+  width: 100%;
+  height: 600px;
+  background-color: aquamarine;
+}
+

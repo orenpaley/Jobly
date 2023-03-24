@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="signup-page"
+  >
+    <form
+      class="row g-3 needs-validation"
+    >
+      <div
+        class="col-md-4"
+      >
+        <label
+          class="form-label"
+          for="username"
+        >
+          Username
+        </label>
+        <input
+          class="form-control"
+          id="username"
+          required=""
+          type="text"
+        />
+        <div
+          class="valid-feedback"
+        >
+          Looks good!
+        </div>
+      </div>
+      <div
+        class="col-md-4"
+      >
+        <label
+          class="form-label"
+          for="password"
+        >
+          Password
+        </label>
+        <input
+          class="form-control"
+          id="validationCustom02"
+          required=""
+          type="password"
+        />
+        <div
+          class="valid-feedback"
+        >
+          Looks good!
+        </div>
+      </div>
+      <div
+        class="col-md-4"
+      >
+        <label
+          class="form-label"
+          for="firstName"
+        >
+          First Name
+        </label>
+        <input
+          class="form-control"
+          id="validationCustom02"
+          required=""
+          type="text"
+        />
+        <div
+          class="valid-feedback"
+        >
+          Looks good!
+        </div>
+      </div>
+      <div
+        class="col-md-4"
+      >
+        <label
+          class="form-label"
+          for="lastName"
+        >
+          Last Name
+        </label>
+        <input
+          class="form-control"
+          id="validationCustom02"
+          required=""
+          type="text"
+        />
+        <div
+          class="valid-feedback"
+        >
+          Looks good!
+        </div>
+      </div>
+      <div
+        class="col-md-4"
+      >
+        <label
+          class="form-label"
+          for="email"
+        >
+          Email
+        </label>
+        <input
+          class="form-control"
+          id="validationCustom02"
+          required=""
+          type="email"
+        />
+        <div
+          class="valid-feedback"
+        >
+          Looks good!
+        </div>
+      </div>
+      <button
+        class="button btn btn-info"
+      >
+        Register
+      </button>
+    </form>
+    <div
+      class="signup-filler"
+    />
+  </div>
+</DocumentFragment>
+`;
