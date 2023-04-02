@@ -11,7 +11,7 @@ function JobCard({ id, title, salary, equity, handle, current }) {
     } else {
       setFound(current.applications.includes(id || +id));
     }
-  }, [current]);
+  }, [current, id]);
 
   const handleClick = async (e) => {
     e.preventDefault();

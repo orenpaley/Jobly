@@ -1,5 +1,6 @@
 import axios from "axios";
 
+console.log("process env reactappbaseurl", process.env.REACT_APP_BASE_URL);
 const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 
 /** API Class.

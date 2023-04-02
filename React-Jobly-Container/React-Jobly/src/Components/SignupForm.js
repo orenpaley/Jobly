@@ -47,7 +47,7 @@ function SignupForm({ setUser, handleChange }) {
         <input
           type="password"
           className="form-control"
-          id="validationCustom02"
+          id="password"
           onChange={handleChange}
           required
         />
@@ -60,7 +60,7 @@ function SignupForm({ setUser, handleChange }) {
         <input
           type="text"
           className="form-control"
-          id="validationCustom02"
+          id="firstName"
           onChange={handleChange}
           required
         />
@@ -73,7 +73,7 @@ function SignupForm({ setUser, handleChange }) {
         <input
           type="text"
           className="form-control"
-          id="validationCustom02"
+          id="lastName"
           onChange={handleChange}
           required
         />
@@ -86,7 +86,7 @@ function SignupForm({ setUser, handleChange }) {
         <input
           type="email"
           className="form-control"
-          id="validationCustom02"
+          id="email"
           onChange={handleChange}
           required
         />

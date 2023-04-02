@@ -9,19 +9,18 @@ function Company({ compHandle, current }) {
   const [company, setCompany] = useState("");
   const [jobs, setJobs] = useState([]);
 
-  const getCompany = async () => {
-    let fetchCompany = await JoblyApi.getCompany(companyHandle.compHandle);
-    setCompany(fetchCompany);
-  };
-  const getJobs = async () => {
-    let fetchJobs = await JoblyApi.getJobs(companyHandle.compHandle);
-    setJobs(fetchJobs);
-  };
-
   useEffect(() => {
+    const getCompany = async () => {
+      let fetchCompany = await JoblyApi.getCompany(companyHandle.compHandle);
+      setCompany(fetchCompany);
+    };
+    const getJobs = async () => {
+      let fetchJobs = await JoblyApi.getJobs(companyHandle.compHandle);
+      setJobs(fetchJobs);
+    };
     getCompany();
     getJobs();
-  }, []);
+  }, [companyHandle.compHandle]);
 
   return (
     <div>

@@ -10,20 +10,19 @@ function Applications() {
   const { current } = React.useContext(userContext);
   const [jobs, setJobs] = useState([]);
 
-  const getJobs = async () => {
-    console.time("promise all");
-    let data = await Promise.all(
-      current.applications.map(async (a) => {
-        return await JoblyApi.getJob(a);
-      })
-    );
-    console.timeEnd("promise all");
-    setJobs(data);
-  };
-
   useEffect(() => {
+    const getJobs = async () => {
+      console.time("promise all");
+      let data = await Promise.all(
+        current.applications.map(async (a) => {
+          return await JoblyApi.getJob(a);
+        })
+      );
+      console.timeEnd("promise all");
+      setJobs(data);
+    };
     getJobs();
-  }, []);
+  }, [current.applications]);
 
   return (
     <div className="home-container">

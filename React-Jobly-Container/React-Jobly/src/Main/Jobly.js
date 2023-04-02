@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, useHistory } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import Routes from "../Routes/Routes";
 import JoblyApi from "../Api/api";
 import userContext from "../UserContext";
@@ -16,7 +16,6 @@ function Jobly() {
     localStorage.getItem("currUser") || { token: null }
   );
   const [current, setCurrent] = useState(null);
-  const history = useHistory();
 
   useEffect(() => {
     const getLoggedUser = async () => {

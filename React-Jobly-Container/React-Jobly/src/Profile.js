@@ -41,7 +41,7 @@ function Profile({ current, setCurrent }) {
           <label htmlFor="email">Email</label>
           <input
             type="text"
-            id="lastName"
+            id="email"
             onChange={handleChange}
             value={current.email}
           />

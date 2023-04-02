@@ -3,9 +3,6 @@ import React from "react";
 import { Route, Switch } from "react-router";
 import PrivateRoute from "../Helpers/PrivateRoute";
 
-import { useHistory } from "react-router";
-
-import JoblyApi from "../Api/api";
 import Home from "../Components/Home";
 import Companies from "../Components/Companies";
 import Company from "../Components/Company";
